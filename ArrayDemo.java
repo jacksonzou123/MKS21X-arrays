@@ -4,6 +4,14 @@ public class ArrayDemo{
     //printArray(arytest);
     //System.out.println(countZeros2D(arytest));
     fill2D(arytest);
+    for (int i = 0; i < arytest.length; i++) {
+      for (int j = 0; j < arytest[i].length; j++) {
+        if (j % 2 == 0) {
+          arytest[i][j] = -3;
+        }
+      }
+    }
+    printArray(fill2DCopy(arytest));
   }
   public static void printArray(int[] ary) {
     System.out.print("[");
@@ -49,5 +57,18 @@ public class ArrayDemo{
       }
     }
     printArray(vals);
+  }
+  public static int[][] fill2DCopy(int[][] vals) {
+    for (int i = 0; i < vals.length; i++) {
+      for (int j = 0; j < vals[i].length; j++) {
+        if (vals[i][j] < 0) {
+          vals[i][j] = 3;
+        }
+        else {
+          vals[i][j] = 1;
+        }
+      }
+    }
+    return vals;
   }
 }
