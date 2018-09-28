@@ -1,8 +1,9 @@
 public class ArrayDemo{
   public static void main(String[] args) {
     int[][] arytest = new int[10][10];
-    printArray(arytest);
-    System.out.println(countZeros2D(arytest));
+    //printArray(arytest);
+    //System.out.println(countZeros2D(arytest));
+    fill2D(arytest);
   }
   public static void printArray(int[] ary) {
     System.out.print("[");
@@ -35,5 +36,18 @@ public class ArrayDemo{
       f += countZeros1D(ary[j]);
     }
     return f;
+  }
+  public static void fill2D(int[][] vals) {
+    for (int i = 0; i < vals.length; i++) {
+      for (int j = 0; j < vals[i].length; j++) {
+        if (i == j) {
+          vals[i][j] = 3;
+        }
+        else {
+          vals[i][j] = 1;
+        }
+      }
+    }
+    printArray(vals);
   }
 }
